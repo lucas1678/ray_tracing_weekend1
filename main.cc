@@ -1,4 +1,5 @@
 #include <iostream>
+#include "vec3.hh"
 
 int main()
 {
@@ -9,6 +10,7 @@ int main()
 
     for(int j=0; j < img_height; j++)
     {
+        std::clog << "\rScanlines remaining: " << (img_height - 1) << ' ' << std::flush;
         for(int i=0; i < img_width; i++)
         {
             auto r = double(i) / (img_width - 1);
@@ -22,4 +24,5 @@ int main()
             std::cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     }
+    std::clog << "\rDone.                \n";
 }
